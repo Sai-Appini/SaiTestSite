@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Registration</title>
+    <title>Sai Test Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>User Registration</h1>
-<form action="review.html">
-<label>Username</label><br>
-<input type="text" id="username"><br><br>
-<label>Email</label><br>
-<input type="email" id="email"><br><br>
-<label>Password</label><br>
-<input type="password" id="password"><br><br>
-<label>Country</label><br>
-<select id="country">
-    <option>India</option>
-    <option>USA</option>
-    <option>UK</option>
-</select><br><br>
-<label>Gender</label><br>
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
-<br><br>
-<label>Hobbies</label><br>
-<input type="checkbox"> Reading
-<input type="checkbox"> Music
-<input type="checkbox"> Sports
-<br><br>
-<button type="submit">Submit</button>
-</form>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>User Registration</h1>
+        <p>Create your account</p>
+
+        <form action="review.html">
+
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter email">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+
+            <label>Country</label>
+            <select id="country">
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Australia</option>
+            </select>
+
+            <label>Gender</label>
+
+            <div class="radio-group">
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+            </div>
+
+            <label>Skills</label>
+            <input type="text" id="skills" placeholder="Playwright">
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
 </body>
 </html>
