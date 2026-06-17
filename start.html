@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>MENU</h2>
+
+        <ul>
+            <li><a href="start.html">Start</a></li>
+            <li><a href="stop.html">Stop</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="hold.html">Hold</a></li>
+            <li><a href="status.html">Status</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <h1>Start Page</h1>
+
+        <table class="data-table">
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" id="name">
+                </td>
+                <td>
+                    <input type="number" id="age">
+                </td>
+                <td>
+                    <input type="text" id="city">
+                </td>
+            </tr>
+
+        </table>
+
+        <button onclick="saveData()" class="save-btn">
+            Save
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function saveData() {
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let city = document.getElementById("city").value;
+
+    if(name === "" || age === "" || city === ""){
+        alert("Please enter all values");
+        return;
+    }
+
+    alert(
+        "Saved Successfully!\n\n" +
+        "Name: " + name +
+        "\nAge: " + age +
+        "\nCity: " + city
+    );
+}
+</script>
+
+</body>
+</html>

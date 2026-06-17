@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>MENU</h2>
+        <ul>
+            <li><a href="start.html">Start</a></li>
+            <li><a href="stop.html">Stop</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="hold.html">Hold</a></li>
+            <li><a href="status.html">Status</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <h1>Data</h1>
+
+        <button id="addBtn" onclick="addRow()">
+            Add
+        </button>
+
+        <table class="data-table">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Place</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+function addRow() {
+
+    let tableBody = document.getElementById("tableBody");
+
+    let row = tableBody.insertRow();
+
+    row.innerHTML = `
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="number"></td>
+        <td><input type="text"></td>
+
+        <td>
+            <button onclick="saveRow(this)">Save</button>
+            <button onclick="editRow(this)" disabled>Edit</button>
+        </td>
+    `;
+}
+
+function saveRow(saveBtn) {
+
+    let row = saveBtn.closest("tr");
+
+    let inputs = row.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.setAttribute("readonly", true);
+    });
+
+    let editBtn =
+        saveBtn.parentElement.querySelectorAll("button")[1];
+
+    editBtn.disabled = false;
+
+    alert("Record Saved Successfully");
+}
+
+function editRow(editBtn) {
+
+    let row = editBtn.closest("tr");
+
+    let inputs = row.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.removeAttribute("readonly");
+    });
+
+    let saveBtn =
+        editBtn.parentElement.querySelectorAll("button")[0];
+
+    saveBtn.style.display = "none";
+
+    editBtn.innerText = "Update";
+
+    editBtn.onclick = function() {
+        updateRow(this);
+    };
+}
+
+function updateRow(updateBtn) {
+
+    let row = updateBtn.closest("tr");
+
+    let inputs = row.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.setAttribute("readonly", true);
+    });
+
+    let saveBtn =
+        updateBtn.parentElement.querySelectorAll("button")[0];
+
+    saveBtn.style.display = "inline-block";
+
+    updateBtn.innerText = "Edit";
+
+    updateBtn.onclick = function() {
+        editRow(this);
+    };
+
+    alert("Record Updated Successfully");
+}
+
+</script>
+
+</body>
+</html>
