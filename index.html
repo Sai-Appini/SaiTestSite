@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sai Test Site</title>
+    <title>User Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         <h1>User Registration</h1>
         <p>Create your account</p>
 
-        <form action="review.html">
+        <form onsubmit="return registerUser()">
 
             <label>Username</label>
             <input type="text" id="username" placeholder="Enter username">
@@ -32,16 +32,6 @@
                 <option>Australia</option>
             </select>
 
-            <label>Gender</label>
-
-            <div class="radio-group">
-                <input type="radio" name="gender"> Male
-                <input type="radio" name="gender"> Female
-            </div>
-
-            <label>Skills</label>
-            <input type="text" id="skills" placeholder="Playwright">
-
             <button type="submit">
                 Register
             </button>
@@ -51,6 +41,8 @@
     </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
