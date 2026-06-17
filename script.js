@@ -18,7 +18,7 @@ function registerUser() {
         return false;
     }
 
-    window.location.href = "dashboard.html";
+    window.location.href = "Dashboard.html";
 
     return false;
 }
